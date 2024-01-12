@@ -27,12 +27,26 @@ bool Program::Link(const std::vector<ShaderPtr>& shaders)
     return true;
 }
 
-void Program::Use() const {
+void Program::Use() const 
+{
     glUseProgram(m_program);
 }
 
-Program::~Program() {
+Program::~Program() 
+{
   if (m_program) {
     glDeleteProgram(m_program);
   }
+}
+
+void Program::SetUniform(const std::string& name, int value) const 
+{
+    auto loc = glGetUniformLocation(m_program, name.c_str());
+    glUniform1i(loc, value);
+}
+
+void Program::SetUniform(const std::string& name,const glm::mat4& value) const 
+{
+    auto loc = glGetUniformLocation(m_program, name.c_str());
+    glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(value));
 }
