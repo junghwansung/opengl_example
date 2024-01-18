@@ -24,6 +24,8 @@ add_executable(${PROJECT_NAME}
     src/VertexLayout.cpp src/VertexLayout.h
     src/Image.cpp src/Image.h
     src/Texture.cpp src/Texture.h
+    src/Mesh.cpp src/Mesh.h
+    src/Model.cpp src/Model.h
     )
 
 # 1. terminal에서 실행. (OS의 빌드 시스템에 맞게 프로젝트 생성 및 속성 설정 해줌.)
