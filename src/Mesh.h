@@ -35,8 +35,8 @@ class Mesh
 public:
     static MeshUPtr Create(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices,
         uint32_t primitiveType);
-
     static MeshUPtr CreateBox();
+    static MeshUPtr CreatePlane();
 
     const VertexLayout* GetVertexLayout() const { return m_vertexLayout.get(); }
     BufferPtr           GetVertexBuffer() const { return m_vertexBuffer; }
