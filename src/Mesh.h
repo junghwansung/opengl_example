@@ -52,10 +52,11 @@ private:
     void Init(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices,
         uint32_t primitiveType);
 
-    uint32_t m_primitiveType { GL_TRIANGLES };
-    VertexLayoutUPtr m_vertexLayout;
-    BufferPtr m_vertexBuffer;
-    BufferPtr m_indexBuffer;
+    uint32_t            m_primitiveType { GL_TRIANGLES };
+    
+    VertexLayoutUPtr    m_vertexLayout;
+    BufferPtr           m_vertexBuffer;
+    BufferPtr           m_indexBuffer;
 
     MaterialPtr m_material;
 };

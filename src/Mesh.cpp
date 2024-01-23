@@ -54,7 +54,7 @@ void Mesh::Draw(const Program* program) const
     {
         m_material->SetToProgram(program);
     }
-  glDrawElements(m_primitiveType, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, 0);
+    glDrawElements(m_primitiveType, m_indexBuffer->GetCount(), GL_UNSIGNED_INT, 0);
 }
 
 MeshUPtr Mesh::CreateBox() 

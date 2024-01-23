@@ -9,6 +9,7 @@
 #include "Texture.h"
 #include "Mesh.h"
 #include "Model.h"
+#include "FrameBuffer.h"
 // ... context 클래스 선언
 
 CLASS_PTR(Context)
@@ -28,6 +29,8 @@ private:
     ProgramUPtr m_program;
     ProgramUPtr m_simpleProgram;
     ProgramUPtr m_textureProgram;
+    ProgramUPtr m_postProgram;
+
 
 
     MeshUPtr m_box;
@@ -38,9 +41,7 @@ private:
     MaterialPtr m_box2Material;
     TexturePtr m_windowTexture;
 
-    // Window Size
-    int m_width     { 640 };
-    int m_height    { 480 };
+    
 
     // animation
     bool m_animation { true };
@@ -62,15 +63,20 @@ private:
     Light m_light;
 
     // camera parameter
-    glm::vec3 m_cameraPos { glm::vec3(0.0f, 2.5f, 8.0f) };
-    glm::vec3 m_cameraFront { glm::vec3(0.0f, 0.0f, -1.0f) };
-    glm::vec3 m_cameraUp    { glm::vec3(0.0f, 1.0f, 0.0f) };
-
-    // camera parameter
     bool m_cameraControl { false };
     glm::vec2 m_prevMousePos { glm::vec2(0.0f) };
     float m_cameraPitch { -20.0f };
     float m_cameraYaw { 0.0f };
+    glm::vec3 m_cameraPos { glm::vec3(0.0f, 2.5f, 8.0f) };
+    glm::vec3 m_cameraFront { glm::vec3(0.0f, 0.0f, -1.0f) };
+    glm::vec3 m_cameraUp    { glm::vec3(0.0f, 1.0f, 0.0f) };
+
+    // framebuffer
+    FramebufferUPtr m_framebuffer;
+
+    // Window Size
+    int m_width     { 640 };
+    int m_height    { 480 };
 };
 
 #endif // __CONTEXT_H__
